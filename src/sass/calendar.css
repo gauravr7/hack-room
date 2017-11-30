@@ -1,0 +1,187 @@
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+section,
+summary,
+time,
+audio {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: 'Montserrat', sans-serif;
+    color: #D1D1D1;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+.container {
+    padding-bottom: 100px;
+    width: 720px;
+    display: inline-flex;
+    flex-direction: column;
+}
+.cal-wrapper {
+    display: flex;
+    height: 720px;
+    padding-bottom: 200px;
+}
+.timings {
+    text-align: right;
+    padding-right: 10px;
+    width: 100px;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    font-size: 0.5em;
+    box-sizing: border-box
+}
+
+.timings span {
+    font-size: 200%;
+    color: #696969;
+}
+
+.days {
+    height: 720px;
+    width: 620px;
+    background-color: #F0F0F0;
+    border-color: #D1D1D1;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    display: inline-flex;
+}
+
+.event {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-left-width: 5px;
+    border-color: #D1D1D1;
+    border-left-color: #57b986;
+    padding-left: 10px;
+    padding-top: 5px;
+    position: absolute;
+    font-size: 0.5em;
+    box-sizing: border-box;
+}
+
+.event .title {
+    color: #57b986;
+    font-size: 200%;
+}
+
+.days-name {
+    padding: 10px 0 10px 100px;
+}
+.days-name ul {
+    list-style-type: none;
+    display: flex;
+}
+.days-name ul li {
+    width: 100px;
+    color: #a29797;
+    font-size: 0.8em;
+    text-align: center;
+}
+.calendar {
+    border: 1px solid black;
+}
+.header {
+    height: 60px;
+    background-color: #babbdd;
+    width: 100%;
+    margin-bottom: 40px; 
+}
+.single-day {
+    border-right: 1px solid #949393;
+    width: 100px;
+}
+.each-hour {
+    background-color: #a4ccf3;
+    border-bottom: 1px solid #ddd;
+    height: 60px;
+    position: relative;
+    box-sizing: border-box;
+}
+.each-quater {
+    position: absolute;
+    width: 100%;
+    background-color: red;
+}
