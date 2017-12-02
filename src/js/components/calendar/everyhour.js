@@ -23,10 +23,12 @@ class Hour extends Component {
 			return booked.map((item, i) => (<EveryQuater key={i} position={item.start} height={item.end - item.start} />));
 		}
 	}
-	
+	bookSlot() {
+		alert('I will show the booking menu');
+	}
 	render() {
 		return (
-			<div className="each-hour">
+			<div className="each-hour" onClick={this.bookSlot}>
 				{ this.renderSlots() }
 			</div>
 		);

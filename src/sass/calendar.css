@@ -173,6 +173,15 @@ body {
     border-right: 1px solid #949393;
     width: 100px;
 }
+.single-day.non-working {
+    background: repeating-linear-gradient(
+        45deg,
+        #606dbc,
+        #606dbc 10px,
+        #465298 10px,
+        #465298 20px
+      );
+}
 .each-hour {
     background-color: #a4ccf3;
     border-bottom: 1px solid #ddd;

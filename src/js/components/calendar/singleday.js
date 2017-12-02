@@ -1,139 +1,41 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Hour from './everyhour';
 
 class Singleday extends Component {
-    // static propTypes = {
-    //     days: PropTypes.array
-    // };
-    // static defaultProps = {
-    //     days: []
-    // };
+    static propTypes = {
+        dayData: PropTypes.object
+    };
+    static defaultProps = {
+        dayData: {}
+    };
+    
+    createData () {
+        const dayData = this.props.dayData;
 
-    constructor() {
-        super();
+        for (var key in dayData) {
+            var dayofWeek = new Date(key).getDay();
+            //checked for sunday and saturday
+            var working = (dayofWeek !== 0 && dayofWeek !== 6)
+            if (working) {
+                var hoursHTML =  dayData[key].map( (particular, i) => {
+                    return <Hour key={i} startTime={particular.startTime} endTime={particular.endTime} booked={particular.booked} /> 
+                })
+            } else {
 
-        this.dayData = [
-            {
-                startTime: 9,
-                endTime: 10,
-                booked: [
-                    {
-                        start: 15,
-                        end: 30
-                    },
-                    {
-                        start: 45,
-                        end: 60
-                    }
-                ]
-            },
-            {
-                startTime: 10,
-                endTime: 11,
-                booked: [
-                    {
-                        start: 30,
-                        end: 60
-                    }
-                ]
-            },
-            {
-                startTime: 11,
-                endTime: 12,
-                booked: [
-                    {
-                        start: 0,
-                        end: 30
-                    }
-                ]
-            },
-            {
-                startTime: 12,
-                endTime: 13,
-                booked: [
-                    {
-                        start: 0,
-                        end: 60
-                    }
-                ]
-            },
-            {
-                startTime: 13,
-                endTime: 14,
-                booked: [
-                    {
-                        start: 0,
-                        end: 60
-                    }
-                ]
-            },
-            {
-                startTime: 14,
-                endTime: 15,
-                booked: [
-                    {
-                        start: 15,
-                        end: 30
-                    },
-                    {
-                        start: 45,
-                        end: 60
-                    }
-                ]
-            },
-            {
-                startTime: 15,
-                endTime: 16,
-                booked: [
-                    {
-                        start: 0,
-                        end: 30
-                    }
-                ]
-            },
-            {
-                startTime: 16,
-                endTime: 17,
-                booked: [
-                    {
-                        start: 0,
-                        end: 60
-                    }
-                ]
-            },
-            {
-                startTime: 17,
-                endTime: 18
-                
-            },
-            {
-                startTime: 18,
-                endTime: 19
-                
-            },
-            {
-                startTime: 19,
-                endTime: 20
-                
-            },
-            {
-                startTime: 20,
-                endTime: 21
-                
             }
-        ]
-    }
-
-    render() {
-        // const { days } = this.props;
+        }
         return (
-            <div className="single-day">
-                {
-                    this.dayData.map((item, index) => <Hour key={`item_${index}`} startTime={item.startTime} endTime={item.endTime} booked={item.booked} />)
-                }
+            <div className={classNames('single-day', 
+             {'non-working': !working },
+             )}>
+                {hoursHTML}
             </div>
-        );
+        )
+    }
+    render() {
+        return this.createData()
     }
 }
 

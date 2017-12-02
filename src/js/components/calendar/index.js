@@ -18,7 +18,510 @@ class Calendar extends Component {
             ],
             activeDate: new Date(),
             activeSec: new Date().getSeconds()
-		}
+        }
+        this.dayData = [
+            {"2017-11-30":[
+                    {
+                        startTime: 9,
+                        endTime: 10,
+                        booked: [
+                            {
+                                start: 15,
+                                end: 30
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 10,
+                        endTime: 11,
+                        booked: [
+                            {
+                                start: 30,
+                                end: 60
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 11,
+                        endTime: 12,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 30
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 12,
+                        endTime: 13
+                    },
+                    {
+                        startTime: 13,
+                        endTime: 14
+                    },
+                    {
+                        startTime: 14,
+                        endTime: 15,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 30
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 15,
+                        endTime: 16,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 30
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 16,
+                        endTime: 17,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 60
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 17,
+                        endTime: 18
+                    },
+                    {
+                        startTime: 18,
+                        endTime: 19
+                    },
+                    {
+                        startTime: 19,
+                        endTime: 20
+                    },
+                    {
+                        startTime: 20,
+                        endTime: 21
+                    }
+                ]
+            },
+            {"2017-12-01":[
+                    {
+                        startTime: 9,
+                        endTime: 10
+                    },
+                    {
+                        startTime: 10,
+                        endTime: 11
+                    },
+                    {
+                        startTime: 11,
+                        endTime: 12
+                    },
+                    {
+                        startTime: 12,
+                        endTime: 13
+                    },
+                    {
+                        startTime: 13,
+                        endTime: 14
+                    },
+                    {
+                        startTime: 14,
+                        endTime: 15
+                    },
+                    {
+                        startTime: 15,
+                        endTime: 16,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 30
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 16,
+                        endTime: 17
+                    },
+                    {
+                        startTime: 17,
+                        endTime: 18
+                    },
+                    {
+                        startTime: 18,
+                        endTime: 19
+                    },
+                    {
+                        startTime: 19,
+                        endTime: 20,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 60
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 20,
+                        endTime: 21,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 60
+                            }
+                        ]
+                    }
+                ]
+            },
+            {"2017-12-02":[
+                    {
+                        startTime: 9,
+                        endTime: 10
+                    },
+                    {
+                        startTime: 10,
+                        endTime: 11,
+                        booked: [
+                            {
+                                start: 30,
+                                end: 60
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 11,
+                        endTime: 12
+                    },
+                    {
+                        startTime: 12,
+                        endTime: 13
+                    },
+                    {
+                        startTime: 13,
+                        endTime: 14
+                    },
+                    {
+                        startTime: 14,
+                        endTime: 15
+                    },
+                    {
+                        startTime: 15,
+                        endTime: 16,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 30
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 16,
+                        endTime: 17
+                    },
+                    {
+                        startTime: 17,
+                        endTime: 18
+                    },
+                    {
+                        startTime: 18,
+                        endTime: 19
+                    },
+                    {
+                        startTime: 19,
+                        endTime: 20,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 60
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 20,
+                        endTime: 21
+                    }
+                ]
+            },
+            {"2017-12-03":[
+                    {
+                        startTime: 9,
+                        endTime: 10
+                    },
+                    {
+                        startTime: 10,
+                        endTime: 11
+                    },
+                    {
+                        startTime: 11,
+                        endTime: 12
+                    },
+                    {
+                        startTime: 12,
+                        endTime: 13,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 60
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 13,
+                        endTime: 14
+                    },
+                    {
+                        startTime: 14,
+                        endTime: 15,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 30
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 15,
+                        endTime: 16,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 30
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 16,
+                        endTime: 17
+                    },
+                    {
+                        startTime: 17,
+                        endTime: 18
+                    },
+                    {
+                        startTime: 18,
+                        endTime: 19
+                    },
+                    {
+                        startTime: 19,
+                        endTime: 20
+                    },
+                    {
+                        startTime: 20,
+                        endTime: 21,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 60
+                            }
+                        ]
+                    }
+                ]
+            },
+            {"2017-12-04":[
+                    {
+                        startTime: 9,
+                        endTime: 10
+                    },
+                    {
+                        startTime: 10,
+                        endTime: 11,
+                        booked: [
+                            {
+                                start: 30,
+                                end: 60
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 11,
+                        endTime: 12,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 30
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 12,
+                        endTime: 13
+                    },
+                    {
+                        startTime: 13,
+                        endTime: 14
+                    },
+                    {
+                        startTime: 14,
+                        endTime: 15
+                    },
+                    {
+                        startTime: 15,
+                        endTime: 16
+                    },
+                    {
+                        startTime: 16,
+                        endTime: 17
+                    },
+                    {
+                        startTime: 17,
+                        endTime: 18,
+                        booked: [
+                            {
+                                start: 30,
+                                end: 60
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 18,
+                        endTime: 19
+                    },
+                    {
+                        startTime: 19,
+                        endTime: 20
+                    },
+                    {
+                        startTime: 20,
+                        endTime: 21
+                    }
+                ]
+            },
+            {"2017-12-05":[
+                    {
+                        startTime: 9,
+                        endTime: 10
+                    },
+                    {
+                        startTime: 10,
+                        endTime: 11,
+                        booked: [
+                            {
+                                start: 30,
+                                end: 60
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 11,
+                        endTime: 12
+                    },
+                    {
+                        startTime: 12,
+                        endTime: 13
+                    },
+                    {
+                        startTime: 13,
+                        endTime: 14
+                    },
+                    {
+                        startTime: 14,
+                        endTime: 15
+                    },
+                    {
+                        startTime: 15,
+                        endTime: 16
+                    },
+                    {
+                        startTime: 16,
+                        endTime: 17
+                    },
+                    {
+                        startTime: 17,
+                        endTime: 18
+                    },
+                    {
+                        startTime: 18,
+                        endTime: 19,
+                        booked: [
+                            {
+                                start: 30,
+                                end: 60
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 19,
+                        endTime: 20
+                    },
+                    {
+                        startTime: 20,
+                        endTime: 21
+                    }
+                ]
+            },
+            {"2017-12-06":[
+                    {
+                        startTime: 9,
+                        endTime: 10
+                    },
+                    {
+                        startTime: 10,
+                        endTime: 11
+                    },
+                    {
+                        startTime: 11,
+                        endTime: 12
+                    },
+                    {
+                        startTime: 12,
+                        endTime: 13,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 60
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 13,
+                        endTime: 14
+                    },
+                    {
+                        startTime: 14,
+                        endTime: 15
+                    },
+                    {
+                        startTime: 15,
+                        endTime: 16,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 30
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 16,
+                        endTime: 17,
+                        booked: [
+                            {
+                                start: 0,
+                                end: 60
+                            }
+                        ]
+                    },
+                    {
+                        startTime: 17,
+                        endTime: 18
+                    },
+                    {
+                        startTime: 18,
+                        endTime: 19
+                    },
+                    {
+                        startTime: 19,
+                        endTime: 20
+                    },
+                    {
+                        startTime: 20,
+                        endTime: 21
+                    }
+                ]
+            }
+        ]
     }
     // componentDidMount() {
     //     window.setInterval(() => {
@@ -73,7 +576,12 @@ class Calendar extends Component {
                     <div> <span> 9:00 </span>PM </div>
                 </div>
                 <div className="days" id="events">
-                    <Singleday/>
+                    {
+                        this.dayData.map( (dayItem, index) => (
+                            <Singleday key={index} dayData={dayItem}/>
+                            )
+                        )
+                    }
                 </div>
             </div>
         </div>
