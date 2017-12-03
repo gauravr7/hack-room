@@ -10,32 +10,50 @@ class Singleday extends Component {
     static defaultProps = {
         dayData: {}
     };
+
+    constructor() {
+        super();
+        this.daySchedule = {
+            startTime: 9,
+            endTime: 21
+        }
+    }
     
-    createData () {
+    singleDayData() {
+        
         const dayData = this.props.dayData;
-
-        for (var key in dayData) {
-            var dayofWeek = new Date(key).getDay();
+        var key, working, dayofWeek;
+        for (key in dayData) {
+            dayofWeek = new Date(key).getDay();
+            working = (dayofWeek !== 0 && dayofWeek !== 6);
+            
             //checked for sunday and saturday
-            var working = (dayofWeek !== 0 && dayofWeek !== 6)
             if (working) {
-                var hoursHTML =  dayData[key].map( (particular, i) => {
-                    return <Hour key={i} startTime={particular.startTime} endTime={particular.endTime} booked={particular.booked} /> 
-                })
-            } else {
+                var hoursHTML = [];
+                for (var hourIndex = this.daySchedule.startTime; hourIndex < this.daySchedule.endTime; hourIndex++) {
+                    var noData = true;
+                    hoursHTML.push( dayData[key].map((particular, i) => {
+                        if (particular.startTime === hourIndex) {
+                            noData = false;
+                            return <Hour key={hourIndex} startTime={hourIndex} endTime={hourIndex+1} booked={particular.booked} /> 
+                        }
+                    }))
 
+                    if (noData) {
+                        hoursHTML.push(<Hour key={hourIndex} startTime={hourIndex} endTime={hourIndex+1} />);
+                    }
+                }
             }
         }
         return (
             <div className={classNames('single-day', 
-             {'non-working': !working },
-             )}>
-                {hoursHTML}
+                {'non-working': !working })
+                }>{hoursHTML || `Happy Weekend`}
             </div>
         )
     }
     render() {
-        return this.createData()
+        return this.singleDayData()
     }
 }
 

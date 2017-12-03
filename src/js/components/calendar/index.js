@@ -19,7 +19,7 @@ class Calendar extends Component {
             activeDate: new Date(),
             activeSec: new Date().getSeconds()
         }
-        this.dayData = [
+        this.daysData = [
             {"2017-11-30":[
                     {
                         startTime: 9,
@@ -52,14 +52,6 @@ class Calendar extends Component {
                         ]
                     },
                     {
-                        startTime: 12,
-                        endTime: 13
-                    },
-                    {
-                        startTime: 13,
-                        endTime: 14
-                    },
-                    {
                         startTime: 14,
                         endTime: 15,
                         booked: [
@@ -88,50 +80,10 @@ class Calendar extends Component {
                                 end: 60
                             }
                         ]
-                    },
-                    {
-                        startTime: 17,
-                        endTime: 18
-                    },
-                    {
-                        startTime: 18,
-                        endTime: 19
-                    },
-                    {
-                        startTime: 19,
-                        endTime: 20
-                    },
-                    {
-                        startTime: 20,
-                        endTime: 21
                     }
                 ]
             },
             {"2017-12-01":[
-                    {
-                        startTime: 9,
-                        endTime: 10
-                    },
-                    {
-                        startTime: 10,
-                        endTime: 11
-                    },
-                    {
-                        startTime: 11,
-                        endTime: 12
-                    },
-                    {
-                        startTime: 12,
-                        endTime: 13
-                    },
-                    {
-                        startTime: 13,
-                        endTime: 14
-                    },
-                    {
-                        startTime: 14,
-                        endTime: 15
-                    },
                     {
                         startTime: 15,
                         endTime: 16,
@@ -141,18 +93,6 @@ class Calendar extends Component {
                                 end: 30
                             }
                         ]
-                    },
-                    {
-                        startTime: 16,
-                        endTime: 17
-                    },
-                    {
-                        startTime: 17,
-                        endTime: 18
-                    },
-                    {
-                        startTime: 18,
-                        endTime: 19
                     },
                     {
                         startTime: 19,
@@ -178,10 +118,6 @@ class Calendar extends Component {
             },
             {"2017-12-02":[
                     {
-                        startTime: 9,
-                        endTime: 10
-                    },
-                    {
                         startTime: 10,
                         endTime: 11,
                         booked: [
@@ -190,22 +126,6 @@ class Calendar extends Component {
                                 end: 60
                             }
                         ]
-                    },
-                    {
-                        startTime: 11,
-                        endTime: 12
-                    },
-                    {
-                        startTime: 12,
-                        endTime: 13
-                    },
-                    {
-                        startTime: 13,
-                        endTime: 14
-                    },
-                    {
-                        startTime: 14,
-                        endTime: 15
                     },
                     {
                         startTime: 15,
@@ -218,18 +138,6 @@ class Calendar extends Component {
                         ]
                     },
                     {
-                        startTime: 16,
-                        endTime: 17
-                    },
-                    {
-                        startTime: 17,
-                        endTime: 18
-                    },
-                    {
-                        startTime: 18,
-                        endTime: 19
-                    },
-                    {
                         startTime: 19,
                         endTime: 20,
                         booked: [
@@ -238,26 +146,10 @@ class Calendar extends Component {
                                 end: 60
                             }
                         ]
-                    },
-                    {
-                        startTime: 20,
-                        endTime: 21
                     }
                 ]
             },
             {"2017-12-03":[
-                    {
-                        startTime: 9,
-                        endTime: 10
-                    },
-                    {
-                        startTime: 10,
-                        endTime: 11
-                    },
-                    {
-                        startTime: 11,
-                        endTime: 12
-                    },
                     {
                         startTime: 12,
                         endTime: 13,
@@ -267,10 +159,6 @@ class Calendar extends Component {
                                 end: 60
                             }
                         ]
-                    },
-                    {
-                        startTime: 13,
-                        endTime: 14
                     },
                     {
                         startTime: 14,
@@ -293,22 +181,6 @@ class Calendar extends Component {
                         ]
                     },
                     {
-                        startTime: 16,
-                        endTime: 17
-                    },
-                    {
-                        startTime: 17,
-                        endTime: 18
-                    },
-                    {
-                        startTime: 18,
-                        endTime: 19
-                    },
-                    {
-                        startTime: 19,
-                        endTime: 20
-                    },
-                    {
                         startTime: 20,
                         endTime: 21,
                         booked: [
@@ -321,10 +193,6 @@ class Calendar extends Component {
                 ]
             },
             {"2017-12-04":[
-                    {
-                        startTime: 9,
-                        endTime: 10
-                    },
                     {
                         startTime: 10,
                         endTime: 11,
@@ -346,26 +214,6 @@ class Calendar extends Component {
                         ]
                     },
                     {
-                        startTime: 12,
-                        endTime: 13
-                    },
-                    {
-                        startTime: 13,
-                        endTime: 14
-                    },
-                    {
-                        startTime: 14,
-                        endTime: 15
-                    },
-                    {
-                        startTime: 15,
-                        endTime: 16
-                    },
-                    {
-                        startTime: 16,
-                        endTime: 17
-                    },
-                    {
                         startTime: 17,
                         endTime: 18,
                         booked: [
@@ -374,26 +222,10 @@ class Calendar extends Component {
                                 end: 60
                             }
                         ]
-                    },
-                    {
-                        startTime: 18,
-                        endTime: 19
-                    },
-                    {
-                        startTime: 19,
-                        endTime: 20
-                    },
-                    {
-                        startTime: 20,
-                        endTime: 21
                     }
                 ]
             },
             {"2017-12-05":[
-                    {
-                        startTime: 9,
-                        endTime: 10
-                    },
                     {
                         startTime: 10,
                         endTime: 11,
@@ -405,34 +237,6 @@ class Calendar extends Component {
                         ]
                     },
                     {
-                        startTime: 11,
-                        endTime: 12
-                    },
-                    {
-                        startTime: 12,
-                        endTime: 13
-                    },
-                    {
-                        startTime: 13,
-                        endTime: 14
-                    },
-                    {
-                        startTime: 14,
-                        endTime: 15
-                    },
-                    {
-                        startTime: 15,
-                        endTime: 16
-                    },
-                    {
-                        startTime: 16,
-                        endTime: 17
-                    },
-                    {
-                        startTime: 17,
-                        endTime: 18
-                    },
-                    {
                         startTime: 18,
                         endTime: 19,
                         booked: [
@@ -441,30 +245,10 @@ class Calendar extends Component {
                                 end: 60
                             }
                         ]
-                    },
-                    {
-                        startTime: 19,
-                        endTime: 20
-                    },
-                    {
-                        startTime: 20,
-                        endTime: 21
                     }
                 ]
             },
             {"2017-12-06":[
-                    {
-                        startTime: 9,
-                        endTime: 10
-                    },
-                    {
-                        startTime: 10,
-                        endTime: 11
-                    },
-                    {
-                        startTime: 11,
-                        endTime: 12
-                    },
                     {
                         startTime: 12,
                         endTime: 13,
@@ -474,14 +258,6 @@ class Calendar extends Component {
                                 end: 60
                             }
                         ]
-                    },
-                    {
-                        startTime: 13,
-                        endTime: 14
-                    },
-                    {
-                        startTime: 14,
-                        endTime: 15
                     },
                     {
                         startTime: 15,
@@ -502,22 +278,6 @@ class Calendar extends Component {
                                 end: 60
                             }
                         ]
-                    },
-                    {
-                        startTime: 17,
-                        endTime: 18
-                    },
-                    {
-                        startTime: 18,
-                        endTime: 19
-                    },
-                    {
-                        startTime: 19,
-                        endTime: 20
-                    },
-                    {
-                        startTime: 20,
-                        endTime: 21
                     }
                 ]
             }
@@ -577,9 +337,9 @@ class Calendar extends Component {
                 </div>
                 <div className="days" id="events">
                     {
-                        this.dayData.map( (dayItem, index) => (
+                        this.daysData.map( (dayItem, index) => (
                             <Singleday key={index} dayData={dayItem}/>
-                            )
+                            )   
                         )
                     }
                 </div>

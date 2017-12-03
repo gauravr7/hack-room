@@ -18,7 +18,6 @@ class Hour extends Component {
 
 	renderSlots() {
 		const { booked } = this.props;
-
 		if (booked.length) {
 			return booked.map((item, i) => (<EveryQuater key={i} position={item.start} height={item.end - item.start} />));
 		}
