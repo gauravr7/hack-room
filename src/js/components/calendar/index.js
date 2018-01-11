@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import Singleday from './singleday'
+import Singleday from './singleday';
+import Bookingform from './bookingform';
 import '../../../sass/calendar.css';
+import 'bootstrap/dist/css/bootstrap.css'
 //react-moment 
 
 class Calendar extends Component {
     constructor(props) {
-		super(props);
+        super(props);
+        this.systemDate = new Date();
 		this.state = {
 			daysofWeek: [
                 { dayname: "Monday" },
@@ -16,14 +19,14 @@ class Calendar extends Component {
                 { dayname: "Saturday" },
                 { dayname: "Sunday" }
             ],
-            activeDate: new Date(),
+            activeDate: this.systemDate.getDate() + '-' + this.systemDate.getMonth()+1 + '-' + this.systemDate.getFullYear(),
             activeSec: new Date().getSeconds(),
             activeRoom: 'MeetingRoom3'
         }
+        
         this.setActiveRoom = this.setActiveRoom.bind(this);
         this.daysData = {
             "status": "SUCCESS",
-            "currentDate": "12-12-2017",
             "data": {
                 "MeetingRoom1": [
                     {
@@ -335,6 +338,11 @@ class Calendar extends Component {
                                     start: 15,
                                     end: 30,
                                     userName: 'Karan Sharma'
+                                },
+                                {
+                                    start: 40,
+                                    end: 50,
+                                    userName: 'ram ratan'
                                 }
                             ]
                         },
@@ -665,68 +673,75 @@ class Calendar extends Component {
 
     render() {
         return (
-        <div className="container" >
+        <div>
             <div className="rooms-list">
                 <ul>
                     { this.createRoomList() }
                 </ul>
             </div>
-            <div>
-                <div>Current Data: 2017-12-03</div>
+            <div className="booking-form">
+                <Bookingform />
+            </div>
+            <div className="app-container" >
+                
                 <div>
-                    <button>Previous Week</button>
-                <button>Next Week</button></div>
-            </div>
-            <div className="days-name">
-                { this.state.activeSec }
-                <ul>
-                    <li>Monday</li>
-                    {/* {
-                        this.state.daysofWeek.map( (day, i) => {
-                            return ( 
-                                <li key={i}>{day.dayname}</li>
+                    <div>Current Data: 2017-12-03</div>
+                    <div>
+                        <button>Previous Week</button>
+                    <button>Next Week</button></div>
+                </div>
+                <div className="days-name">
+                    { this.state.activeSec }
+                    <ul>
+                        <li>Monday</li>
+                        {/* {
+                            this.state.daysofWeek.map( (day, i) => {
+                                return ( 
+                                    <li key={i}>{day.dayname}</li>
+                                )
+                            })
+                        } */}
+                    </ul>
+                </div>
+                <div className='cal-wrapper'>
+                    <div className="timings">
+                        <div> <span> 9:00 </span> AM </div>
+                        <div> 9:30 </div>
+                        <div> <span> 10:00 </span>AM </div>
+                        <div> 10:30 </div>
+                        <div> <span> 11:00 </span>AM </div>
+                        <div> 11:30 </div>
+                        <div> <span> 12:00 </span>PM </div>
+                        <div> 12:30 </div>
+                        <div> <span> 1:00 </span>PM </div>
+                        <div> 1:30 </div>
+                        <div> <span> 2:00 </span>PM </div>
+                        <div> 2:30 </div>
+                        <div> <span> 3:00 </span>PM </div>
+                        <div> 3:30 </div>
+                        <div> <span> 4:00 </span>PM </div>
+                        <div> 4:30 </div>
+                        <div> <span> 5:00 </span>PM </div>
+                        <div> 5:30 </div>
+                        <div> <span> 6:00 </span>PM </div>
+                        <div> 6:30 </div>
+                        <div> <span> 7:00 </span>PM </div>
+                        <div> 7:30 </div>
+                        <div> <span> 8:00 </span>PM </div>
+                        <div> 8:30 </div>
+                        <div> <span> 9:00 </span>PM </div>
+                    </div>
+                    <div className="days" id="events">
+                        { 
+                            this.daysData.data[this.state.activeRoom].map( (dayItem, index) => (
+                                <Singleday key={index} dayData={dayItem}/>
+                                )   
                             )
-                        })
-                    } */}
-                </ul>
-            </div>
-            <div className='cal-wrapper'>
-                <div className="timings">
-                    <div> <span> 9:00 </span> AM </div>
-                    <div> 9:30 </div>
-                    <div> <span> 10:00 </span>AM </div>
-                    <div> 10:30 </div>
-                    <div> <span> 11:00 </span>AM </div>
-                    <div> 11:30 </div>
-                    <div> <span> 12:00 </span>PM </div>
-                    <div> 12:30 </div>
-                    <div> <span> 1:00 </span>PM </div>
-                    <div> 1:30 </div>
-                    <div> <span> 2:00 </span>PM </div>
-                    <div> 2:30 </div>
-                    <div> <span> 3:00 </span>PM </div>
-                    <div> 3:30 </div>
-                    <div> <span> 4:00 </span>PM </div>
-                    <div> 4:30 </div>
-                    <div> <span> 5:00 </span>PM </div>
-                    <div> 5:30 </div>
-                    <div> <span> 6:00 </span>PM </div>
-                    <div> 6:30 </div>
-                    <div> <span> 7:00 </span>PM </div>
-                    <div> 7:30 </div>
-                    <div> <span> 8:00 </span>PM </div>
-                    <div> 8:30 </div>
-                    <div> <span> 9:00 </span>PM </div>
-                </div>
-                <div className="days" id="events">
-                    { 
-                        this.daysData.data[this.state.activeRoom].map( (dayItem, index) => (
-                            <Singleday key={index} dayData={dayItem}/>
-                            )   
-                        )
-                    }
+                        }
+                    </div>
                 </div>
             </div>
+            
         </div>
         );
     }

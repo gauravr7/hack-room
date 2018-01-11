@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import EveryQuater from './everyquater';
 
 class Hour extends Component {
-	
+	constructor (){
+		super();
+		this.initTime = 0;
+		this.finishTime = 59;
+		this.emptySlots;
+	}
 	static propTypes = {
 		startTime: PropTypes.number,
 		endTime: PropTypes.number,
@@ -18,8 +23,11 @@ class Hour extends Component {
 
 	renderSlots() {
 		const { booked } = this.props;
-		if (booked.length) {
-			return booked.map((item, i) => (<EveryQuater key={i} userName={item.userName} position={item.start} height={item.end - item.start} />));
+		const rowLen = booked.length;
+		if (rowLen) {
+			return booked.map( (item, i) => ( 
+			<EveryQuater key={i} userName={item.userName} position={item.start} height={item.end - item.start} />
+			) );
 		}
 	}
 	bookSlot() {
