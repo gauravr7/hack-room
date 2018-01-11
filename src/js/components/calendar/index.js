@@ -340,8 +340,8 @@ class Calendar extends Component {
                                     userName: 'Karan Sharma'
                                 },
                                 {
-                                    start: 40,
-                                    end: 50,
+                                    start: 45,
+                                    end: 60,
                                     userName: 'ram ratan'
                                 }
                             ]
