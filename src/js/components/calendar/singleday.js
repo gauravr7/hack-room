@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Hour from './everyhour';
 
 class Singleday extends Component {
-    static propTypes = {
-        dayData: PropTypes.object
-    };
-    static defaultProps = {
-        dayData: {}
-    };
+    // static propTypes = {
+    //     dayData: PropTypes.object
+    // };
+    // static defaultProps = {
+    //     dayData: {}
+    // };
 
     constructor() {
         super();
@@ -20,13 +20,12 @@ class Singleday extends Component {
     }
     
     singleDayData() {
-        
         const dayData = this.props.dayData;
         var key, working, dayofWeek;
         for (key in dayData) {
             dayofWeek = new Date(key).getDay();
             working = (dayofWeek !== 0 && dayofWeek !== 6);
-            
+
             //checked for sunday and saturday
             if (working) {
                 var hoursHTML = [];
@@ -35,12 +34,12 @@ class Singleday extends Component {
                     hoursHTML.push( dayData[key].map((particular, i) => {
                         if (particular.startTime === hourIndex) {
                             noData = false;
-                            return <Hour key={hourIndex} startTime={hourIndex} endTime={hourIndex+1} booked={particular.booked} /> 
+                            return <Hour slotDate={key} key={hourIndex} startTime={hourIndex} endTime={hourIndex+1} booked={particular.booked} /> 
                         }
                     }))
 
                     if (noData) {
-                        hoursHTML.push(<Hour key={hourIndex} startTime={hourIndex} endTime={hourIndex+1} />);
+                        hoursHTML.push(<Hour slotDate={key} key={hourIndex} startTime={hourIndex} endTime={hourIndex+1} />);
                     }
                 }
             }

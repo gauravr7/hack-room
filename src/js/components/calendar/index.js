@@ -9,28 +9,33 @@ class Calendar extends Component {
     constructor(props) {
         super(props);
         this.systemDate = new Date();
+        //01-12-2018 
+        //MM-DD-YYYY
+        this.formattedDate = this.systemDate.getMonth()+1 + '-' + this.systemDate.getDate() + '-' + this.systemDate.getFullYear();
 		this.state = {
 			daysofWeek: [
-                { dayname: "Monday" },
-                { dayname: "Tuesday" },
-                { dayname: "Wednesday" },
-                { dayname: "Thursday" },
-                { dayname: "Friday" },
-                { dayname: "Saturday" },
-                { dayname: "Sunday" }
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
             ],
-            activeDate: this.systemDate.getDate() + '-' + this.systemDate.getMonth()+1 + '-' + this.systemDate.getFullYear(),
-            activeSec: new Date().getSeconds(),
-            activeRoom: 'MeetingRoom3'
+            activeDate: new Date(this.formattedDate),
+            activeRoom: 'MeetingRoom1',
+            weekDates: []
         }
         
         this.setActiveRoom = this.setActiveRoom.bind(this);
+        this.setNextWeek = this.setNextWeek.bind(this);
+        this.setPrevWeek = this.setPrevWeek.bind(this);
         this.daysData = {
             "status": "SUCCESS",
             "data": {
                 "MeetingRoom1": [
                     {
-                    "2017-11-30":[
+                    "01-15-2018":[
                         {
                             startTime: 9,
                             endTime: 10,
@@ -55,7 +60,7 @@ class Calendar extends Component {
                         }
                     ]},
                     {
-                    "2017-12-01":[
+                    "01-16-2018":[
                         {
                             startTime: 15,
                             endTime: 16,
@@ -69,7 +74,7 @@ class Calendar extends Component {
                         }
                     ]},
                     {
-                    "2017-12-02":[
+                    "01-22-2018":[
                         {
                             startTime: 10,
                             endTime: 11,
@@ -105,7 +110,7 @@ class Calendar extends Component {
                         }
                     ]},
                     {
-                    "2017-12-03":[
+                    "01-25-2018":[
                         {
                             startTime: 12,
                             endTime: 13,
@@ -130,7 +135,7 @@ class Calendar extends Component {
                         }
                     ]},
                     {
-                    "2017-12-04":[
+                    "01-29-2018":[
                         {
                             startTime: 10,
                             endTime: 11,
@@ -155,7 +160,7 @@ class Calendar extends Component {
                         }
                     ]},
                     {
-                    "2017-12-05":[
+                    "01-30-2018":[
                         {
                             startTime: 18,
                             endTime: 19,
@@ -169,7 +174,22 @@ class Calendar extends Component {
                         }
                     ]},
                     {
-                    "2017-12-06":[
+                    "01-31-2018":[
+                        {
+                            startTime: 12,
+                            endTime: 13,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]}
+                    ,
+                    {
+                    "02-06-2018":[
                         {
                             startTime: 12,
                             endTime: 13,
@@ -185,21 +205,10 @@ class Calendar extends Component {
                 ],
                 "MeetingRoom2": [
                     {
-                    "2017-11-30":[
+                    "12-15-2017":[
                         {
-                            startTime: 14,
-                            endTime: 15,
-                            booked: [
-                                {
-                                    start: 15,
-                                    end: 30,
-                                    userName: 'Karan Sharma'
-                                }
-                            ]
-                        },
-                        {
-                            startTime: 16,
-                            endTime: 17,
+                            startTime: 15,
+                            endTime: 16,
                             booked: [
                                 {
                                     start: 0,
@@ -210,13 +219,10 @@ class Calendar extends Component {
                         }
                     ]},
                     {
-                    "2017-12-01":[
-                    ]},
-                    {
-                    "2017-12-02":[
+                    "12-22-2017":[
                         {
-                            startTime: 14,
-                            endTime: 15,
+                            startTime: 10,
+                            endTime: 11,
                             booked: [
                                 {
                                     start: 30,
@@ -249,7 +255,7 @@ class Calendar extends Component {
                         }
                     ]},
                     {
-                    "2017-12-03":[
+                    "01-25-2018":[
                         {
                             startTime: 12,
                             endTime: 13,
@@ -274,7 +280,7 @@ class Calendar extends Component {
                         }
                     ]},
                     {
-                    "2017-12-04":[
+                    "01-29-2018":[
                         {
                             startTime: 10,
                             endTime: 11,
@@ -299,10 +305,10 @@ class Calendar extends Component {
                         }
                     ]},
                     {
-                    "2017-12-05":[
+                    "01-30-2018":[
                         {
-                            startTime: 14,
-                            endTime: 15,
+                            startTime: 18,
+                            endTime: 19,
                             booked: [
                                 {
                                     start: 30,
@@ -313,23 +319,36 @@ class Calendar extends Component {
                         }
                     ]},
                     {
-                    "2017-12-06":[
+                    "01-31-2018":[
                         {
-                            startTime: 17,
-                            endTime: 18,
+                            startTime: 12,
+                            endTime: 13,
                             booked: [
                                 {
                                     start: 0,
-                                    end: 30,
+                                    end: 60,
                                     userName: 'Ryan Mathew'
                                 }
                             ]
                         }
                     ]}
-                ],
-                "MeetingRoom3": [
+                    ,
                     {
-                    "2017-11-30":[
+                    "02-06-2018":[
+                        {
+                            startTime: 12,
+                            endTime: 13,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                    {
+                    "02-08-2018":[
                         {
                             startTime: 9,
                             endTime: 10,
@@ -338,11 +357,6 @@ class Calendar extends Component {
                                     start: 15,
                                     end: 30,
                                     userName: 'Karan Sharma'
-                                },
-                                {
-                                    start: 45,
-                                    end: 60,
-                                    userName: 'ram ratan'
                                 }
                             ]
                         },
@@ -358,292 +372,39 @@ class Calendar extends Component {
                             ]
                         }
                     ]},
-                    {
-                    "2017-12-01":[
-                        {
-                            startTime: 15,
-                            endTime: 16,
-                            booked: [
-                                {
-                                    start: 0,
-                                    end: 30,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        }
-                    ]},
-                    {
-                    "2017-12-02":[
-                        {
-                            startTime: 10,
-                            endTime: 11,
-                            booked: [
-                                {
-                                    start: 30,
-                                    end: 60,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        },
-                        {
-                            startTime: 15,
-                            endTime: 16,
-                            booked: [
-                                {
-                                    start: 0,
-                                    end: 30,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        },
-                        {
-                            startTime: 19,
-                            endTime: 20,
-                            booked: [
-                                {
-                                    start: 0,
-                                    end: 60,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        }
-                    ]},
-                    {
-                    "2017-12-03":[
-                        {
-                            startTime: 12,
-                            endTime: 13,
-                            booked: [
-                                {
-                                    start: 0,
-                                    end: 60,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        },
-                        {
-                            startTime: 14,
-                            endTime: 15,
-                            booked: [
-                                {
-                                    start: 0,
-                                    end: 30,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        }
-                    ]},
-                    {
-                    "2017-12-04":[
-                        {
-                            startTime: 10,
-                            endTime: 11,
-                            booked: [
-                                {
-                                    start: 30,
-                                    end: 60,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        },
-                        {
-                            startTime: 17,
-                            endTime: 18,
-                            booked: [
-                                {
-                                    start: 30,
-                                    end: 60,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        }
-                    ]},
-                    {
-                    "2017-12-05":[
-                        {
-                            startTime: 18,
-                            endTime: 19,
-                            booked: [
-                                {
-                                    start: 30,
-                                    end: 60,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        }
-                    ]},
-                    {
-                    "2017-12-06":[
-                        {
-                            startTime: 12,
-                            endTime: 13,
-                            booked: [
-                                {
-                                    start: 0,
-                                    end: 60,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        }
-                    ]}
-                ],
-                "MeetingRoom4": [
-                    {
-                    "2017-11-30":[
-                        {
-                            startTime: 14,
-                            endTime: 15,
-                            booked: [
-                                {
-                                    start: 15,
-                                    end: 30,
-                                    userName: 'Karan Sharma'
-                                }
-                            ]
-                        },
-                        {
-                            startTime: 16,
-                            endTime: 17,
-                            booked: [
-                                {
-                                    start: 0,
-                                    end: 30,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        }
-                    ]},
-                    {
-                    "2017-12-01":[
-                    ]},
-                    {
-                    "2017-12-02":[
-                        {
-                            startTime: 14,
-                            endTime: 15,
-                            booked: [
-                                {
-                                    start: 30,
-                                    end: 60,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        },
-                        {
-                            startTime: 15,
-                            endTime: 16,
-                            booked: [
-                                {
-                                    start: 0,
-                                    end: 30,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        },
-                        {
-                            startTime: 19,
-                            endTime: 20,
-                            booked: [
-                                {
-                                    start: 0,
-                                    end: 60,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        }
-                    ]},
-                    {
-                    "2017-12-03":[
-                        {
-                            startTime: 12,
-                            endTime: 13,
-                            booked: [
-                                {
-                                    start: 0,
-                                    end: 60,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        },
-                        {
-                            startTime: 14,
-                            endTime: 15,
-                            booked: [
-                                {
-                                    start: 0,
-                                    end: 30,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        }
-                    ]},
-                    {
-                    "2017-12-04":[
-                        {
-                            startTime: 10,
-                            endTime: 11,
-                            booked: [
-                                {
-                                    start: 30,
-                                    end: 60,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        },
-                        {
-                            startTime: 17,
-                            endTime: 18,
-                            booked: [
-                                {
-                                    start: 30,
-                                    end: 60,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        }
-                    ]},
-                    {
-                    "2017-12-05":[
-                        {
-                            startTime: 14,
-                            endTime: 15,
-                            booked: [
-                                {
-                                    start: 30,
-                                    end: 60,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        }
-                    ]},
-                    {
-                    "2017-12-06":[
-                        {
-                            startTime: 17,
-                            endTime: 18,
-                            booked: [
-                                {
-                                    start: 0,
-                                    end: 30,
-                                    userName: 'Ryan Mathew'
-                                }
-                            ]
-                        }
-                    ]}
+                   
                 ]
             }
         }
     }
-    testData() {
-        var data = this.daysData.data;
-        console.log(
-            Object.keys(data).forEach(function(key) {
-                console.log(data[key], key);
-            })
-        )    
-        for (var index in data) {
-            console.log(data[index]);
+
+    currentWeekData() {
+        var data = this.daysData.data[this.state.activeRoom],
+        weekdata=[];
+
+        for (var i=0 ; i<7 ; i++) {
+            var currDate = new Date( this.state.activeDate.getTime() + (i * 86400000) ),
+            matchedResult = {};
+            
+            matchedResult = data.filter( function(val) {
+                var  dataDate = new Date(Object.keys(val)[0]).getTime();
+                return (dataDate === currDate.getTime());
+            });
+
+            if (matchedResult.length > 0) {
+                matchedResult = matchedResult[0];
+            } else {
+                matchedResult[currDate.getMonth()+1 + '-' + currDate.getDate() + '-' + currDate.getFullYear() + ""] = [];
+            }
+            weekdata.push(matchedResult);
         }
+        this.setWeekDataToState(weekdata);
+    }
+    setWeekDataToState(weekdata) {
+        this.setState({
+            weekDates: weekdata
+        }, () => this.renderUI() );
+      
     }
     createRoomList() {
         var list = [];
@@ -653,23 +414,37 @@ class Calendar extends Component {
         })
         return list;
     }
-    createCalendar() {
+  
+    setNextWeek() {
+        this.setState({
+            activeDate: new Date( this.state.activeDate.getTime() + (7 * 86400000) )
+        }, () => this.currentWeekData() )
+    }
 
+    setPrevWeek() {
+        this.setState({
+            activeDate: new Date( this.state.activeDate.getTime() - (7 * 86400000) )
+        }, () => this.currentWeekData() )
+        
     }
     setActiveRoom(roomName) {
-        console.log(roomName);
         this.setState({
             activeRoom: roomName    
-        })
+        }, () => this.currentWeekData() )
     }
-    // componentDidMount() {
-    //     window.setInterval(() => {
-    //         this.setState({
-    //             activeSec: new Date().getSeconds()
-    //         });
-    //     }, 1000);
-    // }
-    //this.setActiveRoom.bind(this, 'asd')
+    componentDidMount() {
+        this.currentWeekData();
+    }
+    renderUI() {
+        var UI = [];
+    
+        this.state.weekDates.map( (dayItem, index) => (
+                UI.push(<Singleday key={index} dayData={dayItem}/>)
+            )   
+        )
+ 
+        return UI;
+    }
 
     render() {
         return (
@@ -683,24 +458,24 @@ class Calendar extends Component {
                 <Bookingform />
             </div>
             <div className="app-container" >
-                
-                <div>
-                    <div>Current Data: 2017-12-03</div>
+                <div className="date-markers">
+                    <div>Current Date: {this.formattedDate}</div>
+                    <div>Current Week start from : {this.state.activeDate.getMonth()+1 + '-' + this.state.activeDate.getDate() + '-' + this.state.activeDate.getFullYear()  }</div>
                     <div>
-                        <button>Previous Week</button>
-                    <button>Next Week</button></div>
+                        <button onClick={this.setPrevWeek}>Previous Week</button>
+                        <button onClick={this.setNextWeek}>Next Week</button></div>
                 </div>
                 <div className="days-name">
-                    { this.state.activeSec }
                     <ul>
-                        <li>Monday</li>
-                        {/* {
-                            this.state.daysofWeek.map( (day, i) => {
-                                return ( 
-                                    <li key={i}>{day.dayname}</li>
-                                )
-                            })
-                        } */}
+                        {
+                            this.state.weekDates.map( (dayItem, index) => (
+                                <li key={index}> 
+                                    <span>{ new Date( Object.keys(dayItem)[0] ).getDate() } </span>
+                                    <span>{ this.state.daysofWeek[new Date( Object.keys(dayItem)[0] ).getDay()] } </span>
+                                </li>
+                                ) 
+                            )
+                        }
                     </ul>
                 </div>
                 <div className='cal-wrapper'>
@@ -732,12 +507,7 @@ class Calendar extends Component {
                         <div> <span> 9:00 </span>PM </div>
                     </div>
                     <div className="days" id="events">
-                        { 
-                            this.daysData.data[this.state.activeRoom].map( (dayItem, index) => (
-                                <Singleday key={index} dayData={dayItem}/>
-                                )   
-                            )
-                        }
+                        {this.renderUI()}
                     </div>
                 </div>
             </div>

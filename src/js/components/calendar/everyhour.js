@@ -20,12 +20,14 @@ class Hour extends Component {
 	static propTypes = {
 		startTime: PropTypes.number,
 		endTime: PropTypes.number,
+		slotDate: PropTypes.string,
 		booked: PropTypes.array
 	};
 
 	static defaultProps = {
 		startTime: 10,
 		endTime: 11,
+		slotDate: '01-01-2018',
 		booked: []
 	};
 
@@ -44,8 +46,6 @@ class Hour extends Component {
 		alert('I will show the booking menu');
 	}
 	freeSlots(booked) {
-		console.log('inside freeSlots');
-		const timeInterval = 15;
 		var matched;
 		for (var i = 0; i < 60; i++) {
 			matched = false;
@@ -60,7 +60,7 @@ class Hour extends Component {
 				}
 			}
 			if (!matched) {
-				this.slotData.push( this.SlotItem(i, parseInt(i) ) );
+				this.slotData.push( this.SlotItem(i, parseInt(i, 10) ) );
 			}
 		}
 		this.refactorSlots();
@@ -71,7 +71,6 @@ class Hour extends Component {
 		var finalLength = finalSlots.push(slotArray[0]) - 1;
 
 		for (var x in slotArray ) {
-			var prev = parseInt(x) - 1;
 			if (slotArray[x].userName === finalSlots[finalLength].userName) {
 				finalSlots[finalLength].slotEnd = slotArray[x].slotEnd;		
 			} else {
