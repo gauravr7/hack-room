@@ -373,6 +373,348 @@ class Calendar extends Component {
                         }
                     ]},
                    
+                ],
+                "MeetingRoom3": [
+                    {
+                    "12-15-2017":[
+                        {
+                            startTime: 15,
+                            endTime: 16,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 30,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                    {
+                    "12-28-2017":[
+                        {
+                            startTime: 10,
+                            endTime: 11,
+                            booked: [
+                                {
+                                    start: 30,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        },
+                        {
+                            startTime: 15,
+                            endTime: 16,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 30,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        },
+                        {
+                            startTime: 19,
+                            endTime: 20,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                    {
+                    "01-03-2018":[
+                        {
+                            startTime: 12,
+                            endTime: 13,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        },
+                        {
+                            startTime: 14,
+                            endTime: 15,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 30,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                    {
+                    "01-14-2018":[
+                        {
+                            startTime: 10,
+                            endTime: 11,
+                            booked: [
+                                {
+                                    start: 30,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        },
+                        {
+                            startTime: 17,
+                            endTime: 18,
+                            booked: [
+                                {
+                                    start: 30,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                    {
+                    "01-17-2018":[
+                        {
+                            startTime: 18,
+                            endTime: 19,
+                            booked: [
+                                {
+                                    start: 30,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                    {
+                    "02-04-2018":[
+                        {
+                            startTime: 12,
+                            endTime: 13,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]}
+                    ,
+                    {
+                    "02-11-2018":[
+                        {
+                            startTime: 12,
+                            endTime: 13,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                    {
+                    "02-15-2018":[
+                        {
+                            startTime: 9,
+                            endTime: 10,
+                            booked: [
+                                {
+                                    start: 15,
+                                    end: 30,
+                                    userName: 'Karan Sharma'
+                                }
+                            ]
+                        },
+                        {
+                            startTime: 11,
+                            endTime: 12,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 30,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                   
+                ],
+                "MeetingRoom4": [
+                    {
+                    "12-18-2017":[
+                        {
+                            startTime: 15,
+                            endTime: 16,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 30,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                    {
+                    "12-22-2017":[
+                        {
+                            startTime: 10,
+                            endTime: 11,
+                            booked: [
+                                {
+                                    start: 30,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        },
+                        {
+                            startTime: 15,
+                            endTime: 16,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 30,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        },
+                        {
+                            startTime: 19,
+                            endTime: 20,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                    {
+                    "01-05-2018":[
+                        {
+                            startTime: 12,
+                            endTime: 13,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        },
+                        {
+                            startTime: 14,
+                            endTime: 15,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 30,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                    {
+                    "01-13-2018":[
+                        {
+                            startTime: 10,
+                            endTime: 11,
+                            booked: [
+                                {
+                                    start: 30,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        },
+                        {
+                            startTime: 17,
+                            endTime: 18,
+                            booked: [
+                                {
+                                    start: 30,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                    {
+                    "01-16-2018":[
+                        {
+                            startTime: 18,
+                            endTime: 19,
+                            booked: [
+                                {
+                                    start: 30,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                    {
+                    "01-29-2018":[
+                        {
+                            startTime: 12,
+                            endTime: 13,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]}
+                    ,
+                    {
+                    "02-12-2018":[
+                        {
+                            startTime: 12,
+                            endTime: 13,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 60,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                    {
+                    "02-16-2018":[
+                        {
+                            startTime: 9,
+                            endTime: 10,
+                            booked: [
+                                {
+                                    start: 15,
+                                    end: 30,
+                                    userName: 'Karan Sharma'
+                                }
+                            ]
+                        },
+                        {
+                            startTime: 11,
+                            endTime: 12,
+                            booked: [
+                                {
+                                    start: 0,
+                                    end: 30,
+                                    userName: 'Ryan Mathew'
+                                }
+                            ]
+                        }
+                    ]},
+                   
                 ]
             }
         }
@@ -454,9 +796,6 @@ class Calendar extends Component {
                     { this.createRoomList() }
                 </ul>
             </div>
-            <div className="booking-form">
-                <Bookingform />
-            </div>
             <div className="app-container" >
                 <div className="date-markers">
                     <div>Current Date: {this.formattedDate}</div>
@@ -511,7 +850,9 @@ class Calendar extends Component {
                     </div>
                 </div>
             </div>
-            
+            <div className="booking-form">
+                <Bookingform />
+            </div>
         </div>
         );
     }

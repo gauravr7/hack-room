@@ -6,7 +6,7 @@ class Bookingform extends Component {
 	constructor() {
 		super();
 		this.state = {
-			name: 'raja',
+			name: 'Name',
 			bookingDate: '2014-02-09',
 			startTime: '22:53:05',
 			timeSlot: null
